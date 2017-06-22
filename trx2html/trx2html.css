@@ -18,6 +18,6 @@ p.testIgnore{background-color:yellow;font-size:small;color:yellow;cursor:hand;ma
 p.testIgnore:hover{background-color:grey;}
 
 div.barContainer{width:100%;border:solid 1px black}
-div.trace{font:60% Courier}
+div.trace{font:70% Courier}
 div.border{border:dotted 1px #dcdcdc;padding:2px 2px 2px 2px}
 div.contents{border:dotted 1px #dcdcdc;padding:2px 2px 2px 2px;width:400px;background-color:#efefef}

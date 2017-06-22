@@ -198,11 +198,10 @@
             <xsl:value-of select="t:Output/t:ErrorInfo/t:Message/text()"/>
             
             <div id="{generate-id(.)}" class="trace"  style="display:none">
-              <xsl:call-template name="debugInfo">
-                <xsl:with-param name="testId" select="$testId" />
-              </xsl:call-template>
-              <pre  class="failureInfo" >
-                <xsl:value-of select="t:Output/t:ErrorInfo/t:StackTrace/text()"/>
+              <pre  class="debugInfo" >
+                <xsl:call-template name="debugInfo">
+                  <xsl:with-param name="testId" select="$testId" />
+                </xsl:call-template>
               </pre>
             </div>
             
@@ -254,6 +253,18 @@
       </xsl:choose>
       <td>
         <xsl:value-of select="@duration" />
+      </td>
+      <td>
+        <p class="testDebug"
+            title="Click to see the DebugTrace"
+          onclick="togle('debugTrace{generate-id(.)}')"
+          style="font-weight: bold">see DebugTrace</p>
+
+        <div id="debugTrace{generate-id(.)}" style="display:none">
+          <pre>
+            <xsl:value-of select="t:Output/t:DebugTrace/text()" />
+          </pre>
+        </div>
       </td>
     </xsl:for-each>
   </xsl:template>
