@@ -255,16 +255,24 @@
         <xsl:value-of select="@duration" />
       </td>
       <td>
-        <p class="testDebug"
+        <a href="#" class="testDebug"
             title="Click to see the DebugTrace"
           onclick="togle('debugTrace{generate-id(.)}')"
-          style="font-weight: bold">see DebugTrace</p>
+          style="font-weight: bold">Click to see the DebugTrace</a>
 
-        <div id="debugTrace{generate-id(.)}" style="display:none">
-          <pre>
+        <textarea rows="8" cols="100" id="debugTrace{generate-id(.)}" style="display:none">
             <xsl:value-of select="t:Output/t:DebugTrace/text()" />
-          </pre>
-        </div>
+        </textarea>
+      </td>
+      <td>
+        <a href="#" class="testStdOut"
+            title="Click to see StdOut"
+          onclick="togle('stdOut{generate-id(.)}')"
+          style="font-weight: bold">Click to see StdOut</a>
+
+        <textarea rows="8" cols="100" id="stdOut{generate-id(.)}" style="display:none">
+            <xsl:value-of select="t:Output/t:StdOut/text()" />
+        </textarea>
       </td>
     </xsl:for-each>
   </xsl:template>
